@@ -13,12 +13,11 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
   int m = 0;
-  for (uint64_t i = 2; i <= 1000; i++) {
-    if (checkPrime(i)) {
-      m += 1;
-      if (m == n) {
-        return i;
-      }
+  uint64_t cur = 1;
+  while (m < n) {
+    cur++;
+    if (checkPrime(cur)) {
+      m++;
     }
   }
   return 2;
